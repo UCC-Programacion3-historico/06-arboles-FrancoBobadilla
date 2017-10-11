@@ -30,6 +30,8 @@ public:
     void postorden();
 
     void print(bool esDerecho, string identacion);
+
+    int PorNivel(int nivel,int cont);
 };
 
 template<class T>
@@ -158,4 +160,7 @@ void NodoArbol<T>::print(bool esDerecho, string identacion) {
     }
 }
 
+template<class T>
+int NodoArbol<T>::PorNivel(int nivel,int cont) {
+}
 #endif //NODOARBOL_H
