@@ -1,6 +1,12 @@
-#include <iostream>
-
+#include "../ArbolBinario/ProbarArbol.h"
 int main() {
-    std::cout << "Ejercicio 06/04\n" << std::endl;
-    return 0;
+    system("clear");
+    char n;
+    ArbolBinario<int> arbol;
+    char x;
+    try {
+        ProbarArbol(&arbol, 30, 100, 500, true);
+    } catch (int e) {}
+    cin>>n;
+    main();
 }

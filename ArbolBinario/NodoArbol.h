@@ -31,7 +31,9 @@ public:
 
     void print(bool esDerecho, string identacion);
 
-    int PorNivel(int nivel,int cont);
+    int PorNivel(int nivel, int);
+
+    void espejo();
 };
 
 template<class T>
@@ -161,6 +163,28 @@ void NodoArbol<T>::print(bool esDerecho, string identacion) {
 }
 
 template<class T>
-int NodoArbol<T>::PorNivel(int nivel,int cont) {
+int NodoArbol<T>::PorNivel(int nivel, int x) {
+    if (nivel == x)
+        return 1;
+    if (izq != NULL && der != NULL)
+        return izq->PorNivel(nivel, x + 1) + der->PorNivel(nivel, x + 1);
+    if (izq != NULL)
+        return izq->PorNivel(nivel, x + 1);
+    if (der != NULL)
+        return der->PorNivel(nivel, x + 1);
+    return 0;
 }
+
+template<class T>
+void NodoArbol<T>::espejo() {
+    NodoArbol<T> *aux;
+    aux =izq;
+    izq = der;
+    der = aux;
+    if (izq != NULL)
+        izq->espejo();
+    if (der != NULL)
+        der->espejo();
+}
+
 #endif //NODOARBOL_H

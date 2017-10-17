@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 # Agrego todos los test.
 add_subdirectory(test)
 
-set(SOURCE_FILES_01 Ej-01/main.cpp ArbolBinario/ArbolBinario.h ArbolBinario/NodoArbol.h)
+set(SOURCE_FILES_01 Ej-01/main.cpp ArbolBinario/ArbolBinario.h ArbolBinario/NodoArbol.h ArbolBinario/ProbarArbol.h)
 add_executable(Ej-01 ${SOURCE_FILES_01})
 
 set(SOURCE_FILES_03 Ej-03/main.cpp)

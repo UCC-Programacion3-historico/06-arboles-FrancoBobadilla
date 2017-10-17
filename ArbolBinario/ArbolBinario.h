@@ -28,6 +28,9 @@ public:
 
     void print();
 
+    int PorNivel(int nivel);
+    
+    void espejo();
 };
 
 template<class T>
@@ -95,6 +98,16 @@ template<class T>
 void ArbolBinario<T>::print() {
     if (raiz != NULL)
         raiz->print(false,"");
+}
+
+template<class T>
+int ArbolBinario<T>::PorNivel(int nivel) {
+    return raiz->PorNivel(nivel,0);
+}
+
+template<class T>
+void ArbolBinario<T>::espejo() {
+    raiz->espejo();
 }
 
 
